@@ -1,0 +1,172 @@
+@import "bootstrap/less/bootstrap.less";
+@import "bootswatch/theme/variables.less";
+@import "bootswatch/theme/bootswatch.less";
+
+@brand-primary: #FD6720;
+@brand-warning: #FD6720;
+@link-color: @brand-primary;
+@body-bg: #333;
+@grid-gutter-width: 32px;
+@menu-gray: darken(#fff, 15%);
+
+@font-face {
+	font-family: digital;
+	src: url('../font/digital-7 (mono).ttf');
+}
+
+@media (min-width: 1000px) { .container { width: 1032px; } }
+
+html {
+	overflow-y: scroll;
+}
+body {
+	background: #333 url('../img/background_pattern.jpg') repeat top left;
+	background-position: fixed;
+}
+
+header {
+	padding-top: @grid-gutter-width;
+	height: 218px;
+	background: transparent url('../img/skyline_utrecht.png') no-repeat 0 @grid-gutter-width;
+
+	.social-media {
+		float: right;
+		a { color: #fff; }
+		a:hover { color: @brand-primary; }
+	}
+}
+
+#menu {
+	margin: @grid-gutter-width 0;
+
+	ul {
+		padding: 0;
+		list-style: none;
+
+		li {
+			position: relative;
+			display: inline-block;
+			border: 2px solid transparent;
+			border-width: 2px 0;
+
+			ul { display: none; }
+
+			& + li {
+				margin-left: 20px;
+			}
+			&.active {
+				font-weight: bold;
+				border-bottom-color: @brand-primary;
+				a {
+					color: @brand-primary;
+				}
+			}
+			&:hover {
+				border-bottom-color: @menu-gray;
+			}
+			a {
+				display: block;
+				padding: 10px 0;
+				color: @menu-gray;
+				font-size: @font-size-large;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.block {
+	background-color: #fff;
+	padding: 16px;
+	border-radius: 4px;
+	margin: 0 0 @grid-gutter-width;
+
+	h1 {
+		margin: 8px 0 24px;
+		color: @brand-primary;
+		&:after {
+			width: 64px;
+			display: block;
+			content: '';
+			margin-top: 16px;
+			border-bottom: 4px solid @brand-primary;
+		}
+	}
+	p {
+		margin-bottom: 16px;
+	}
+	&.small h1 {
+		font-size: @font-size-h3;
+		margin: 0 0 16px;
+		&:after {
+			width: 48px;
+			margin-top: 16px;
+		}
+	}
+}
+
+.block.sponsors {
+	a {
+		display: block;
+		img {
+			max-width: 100%;
+		}
+		margin-bottom: 24px;
+		&:last-child { margin-bottom: 0; }
+	}
+}
+
+.btn-block {
+	font-size: @font-size-large;
+}
+
+#timeline {
+	.block {
+		margin: 0 0 ceil((@grid-gutter-width / 4));
+	}
+	.media {
+		img.media-object {
+			border-radius: 4px;
+		}
+		.media-body {
+			.date {
+				float: right;
+				color: @gray;
+				font-size: @font-size-small;
+			}
+			h4 a {
+				color: @text-color;
+			}
+			img {
+				max-width: 100%;
+			}
+			a.read-more:after {
+				content: ' »'
+			}
+
+			.game {
+				height: 40px;
+				text-align: center;
+
+				.scoreboard {
+					display: inline-block;
+					font-size: @font-size-h4;
+					& > span {
+						float: left;
+						margin-right: 16px;
+					}
+
+					.team {
+						padding-top: 8px;
+					}
+					.score {
+						font-family: digital, sans-serif;
+						font-size: 50px;
+						line-height: .65;
+						color: @brand-primary;
+					}
+				}
+			}
+		}
+	}
+}
