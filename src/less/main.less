@@ -8,6 +8,7 @@
 @body-bg: #333;
 @grid-gutter-width: 32px;
 @menu-gray: darken(#fff, 15%);
+@btn-default-bg: #555;
 
 @font-face {
 	font-family: digital;
@@ -31,7 +32,7 @@ header {
 
 	.social-media {
 		float: right;
-		a { color: #fff; }
+		a { color: #fff; text-decoration: none; }
 		a:hover { color: @brand-primary; }
 	}
 }
@@ -95,7 +96,7 @@ header {
 	p {
 		margin-bottom: 16px;
 	}
-	&.small h1 {
+	&.aside h1 {
 		font-size: @font-size-h3;
 		margin: 0 0 16px;
 		&:after {
@@ -105,13 +106,23 @@ header {
 	}
 }
 
-.block.sponsors {
+.block.aside.sponsors {
 	a {
 		display: block;
 		img {
 			max-width: 100%;
 		}
 		margin-bottom: 24px;
+		&:last-child { margin-bottom: 0; }
+	}
+}
+
+.block.aside ul.links {
+	margin: 0;
+	padding-left: 16px;
+
+	li {
+		margin-bottom: 4px;
 		&:last-child { margin-bottom: 0; }
 	}
 }
@@ -169,4 +180,13 @@ header {
 			}
 		}
 	}
+}
+
+footer {
+	margin-bottom: @grid-gutter-width;
+	p { color: @menu-gray; }
+}
+
+@media (max-width: @screen-sm-min) {
+	footer span { display: block; }
 }
