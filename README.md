@@ -8,5 +8,9 @@ npm run less
 npm start
 
 # Development
-npm runwatch
+npm run watch
 ```
+
+## Preview
+
+![Preview](src/img/preview.jpg)
